@@ -10,6 +10,7 @@ For example:
 The place we can cut will be:<br>
 1. Between 2 and 7 which cost 5 (7-2) bitcoins. <br>
 2. Between 10 and 13 which cost 3 (13-10) bitcoins. <br>
+
 The total for two cut costs 8 bitcoins, while we only have 4 bitcoins. <br>
 So, what we can do is to cut the sequence using the second choice. <br>
 Then, the maximum cut we can get will be 1 so the output for this case is 1. <br>
