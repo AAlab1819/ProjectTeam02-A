@@ -50,7 +50,24 @@ _Out:_
 
 ## Explanation
 ### Problem Statement
-`//explain probblem here`
+The problem here is to maximize the amount of cuts we can perform with the initial amount of bitcoins given. 
+With every cut, all segments must consist of the same amount of odd and even numbers. 
+The price for a cut will be the place it is divided, a(i+1)-a(i) bitcoins. 
+
+```
+For example:
+6 4
+1 2 7 10 13 20
+```
+The place we can cut will be:
+
+1. Between 2 and 7 which cost 5 (7-2) bitcoins. 
+2. Between 10 and 13 which cost 3 (13-10) bitcoins.
+ 
+The total for two cut costs 8 bitcoins, while we only have 4 bitcoins.  
+So, what we can do is to cut the sequence using the second choice.  
+Then, the maximum cut we can get will be 1 so the output for this case is 1.  
+The problem link is: https://codeforces.com/problemset/problem/998/B 
 
 ### Greedy Approach
 The greedy solution is first to input all the sequence given while checking if it is an odd number or an even number using a counter. Here, we can found out if the counter is 0 then at that point it has equal odd and even numbers. After we got at which point it is equal, we store that point to an array (here it is called breakPoint). <br>
