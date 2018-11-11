@@ -3,7 +3,7 @@ This repository will solve Codeforces' problem [998 B](https://codeforces.com/pr
 
 ## Team Member
 - Liang Cai
-- Nadya Alimin
+- Nadya Natasha Alimin
 - Sebastian Aldi
 - Winston Renatan
 
@@ -75,6 +75,55 @@ Then, we check for each point what is the cutting price and store it to an array
 Then we sort the `cutPrice` vector in increasing order. <br>
 If the break point is at the end of the sequence then it is not stored to the array. <br>
 We loop the `cutPrice` array and substract our current bitcoins with the cutting price while it is positive. Where, each cut will add an answer for the end. If, when we subtract our current bitcoins with the cutting price but we get a negative number, then we stop it there. Overall complexity is O(*n log n*), because using STL sort has a complexity of *n log n*, and the traversal only takes O(*n*) time. <br>
+
+Snippet of code <br>
+```
+for(int i=0; i<numSequence; i++) {
+        cin>>arraySeq[i];
+        //IF IT IS EVEN NUMBER
+        if(arraySeq[i]%2==0) {
+            evenNum++;
+        }
+        //IF IT IS ODD NUMBER
+        else {
+            evenNum--;
+        }
+        //BREAK POINT BECAUSE THE SUM OF EVEN AND ODD IS EQUAL HERE
+        if(evenNum==0) {
+            breakPoint.push_back(i);
+        }
+```
+In this part of the code, we input some number and put it in an array called `breakPoint`. Then, a number from that array will be executed, if the reminder of that number divided two is zero, then the sum of the even number will increased automatically and it it turned out to be an odd number,  the sum of the even number will be decreased. Next it, if the sum of the even and odd number is equal, it will reach the `breakPoint` and do the loop `for` again. <br>
+
+```
+for(int i=0; i<breakPoint.size(); i++) {
+        //IF THE BREAKPOINT IS AT THE END OF SEQUENCE
+        if(breakPoint[i]==numSequence-1) {
+            break;
+        }
+        //FIND THE CUTTING PRICE AT THAT POINT
+        else {
+            cutPrice.push_back(abs(arraySeq[breakPoint[i]]-arraySeq[breakPoint[i]+1]));
+        }
+```
+Meanwhile in this part, we will cheeck the `breakPoint`, if it is at the end of the sequence, check the previous number of the array. If the breakPoint is not at the end, that find the cutting price at that point directly. <br>
+
+```
+sort(cutPrice.begin(), cutPrice.end());
+    for(int i=0; i<cutPrice.size(); i++) {
+        //IF THERE IS BITCOINS LEFT AFTER CUTTING AT THE CHEAPEST POINT
+        if(bitcoins-cutPrice[i]>=0) {
+            //ADD CUTTED SEGMENTS
+            cutAns++;
+            //REDUCE THE BITCOINS
+            bitcoins=bitcoins-cutPrice[i];
+        }
+        else {
+            break;
+        }
+```
+Lastly, find how many times the `cutPrice` we can do, by using `Sort`, sort the price from the cheapest one. Then do loop to find the bitcoins left after cutting. If there is some bitcoins left, the counter will be added, then reduce the bitcoins by reduce the bitcoins.
+
 The solution link is: https://codeforces.com/contest/998/submission/44893627 <br>
 
 ### Dynamic Programming Approach
