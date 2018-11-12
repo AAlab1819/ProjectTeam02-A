@@ -128,6 +128,57 @@ The solution link is: https://codeforces.com/contest/998/submission/44893627 <br
 
 ### Dynamic Programming Approach
 Perform the same operation as the greedy one (find all the places we can cut, store it into an array that has the prices of each cut). This problem is solvable by using the knapsack method, but assign the worth as 1 for all of them (after all, a cut of price 5 and of price 1 is worth the same). Build the DP table from in bottom up fashion, and then just output `dp[how many cuts can we make][initial bitcoins we had]` as the answer. Overall complexity is O(*nB*), where B is the initial amount of bitcoins we had. <br>
+
+Snippet of code
+```c++
+for(int i=0; i<numSequence; i++) {
+        cin>>arraySeq[i];
+        //IF IT IS EVEN NUMBER
+        if(arraySeq[i]%2==0) {
+            evenNum++;
+        }
+        //IF IT IS ODD NUMBER
+        else {
+            evenNum--;
+        }
+        //BREAK POINT BECAUSE THE SUM OF EVEN AND ODD IS EQUAL HERE
+        if(evenNum==0) {
+            breakPoint.push_back(i);
+        }
+    }
+```
+The solving problem is quiet similar to Greedy Approach. First, we input some number and put it in an array called breakPoint. Then a number from that array will be executed, if the reminder of that number divided two is zero, than the sum of the even number will be increased automatically and if it turned out to be odd number, the sum of the even number will be decreased. Next is, if the sum of the even and odd number is equal, it will reach the break point and loop from the start. <br>
+
+```c++
+for(int i=0; i<breakPoint.size(); i++) {
+        //IF THE BREAKPOINT IS AT THE END OF SEQUENCE
+        if(breakPoint[i]==numSequence-1) {
+            break;
+        }
+        //FIND THE CUTTING PRICE AT THAT POINT
+        else {
+            cutPrice.push_back(abs(arraySeq[breakPoint[i]]-arraySeq[breakPoint[i]+1]));
+        }
+    }
+```
+In this part of the code is stil the same, check the breakpoint, if it is at the end of the sequence, check the previous number of the array. If the breakpoint is not at the end, than find the cutting price at that point directly. <br>
+
+```c++
+for(int i = 0; i <= cutPrice.size(); i++)
+    {
+        for(int w = 0; w <= bitcoins; w++)
+        {
+            if(i == 0 || w == 0)
+                dp[i][w] = 0;
+            else if(cutPrice[i-1] <= w)
+                dp[i][w] = max(1 + dp[i-1][w-cutPrice[i-1]], dp[i-1][w]);
+            else
+                dp[i][w] = dp[i-1][w];
+        }
+    }
+```
+And here is the different from Greedy Approach. As we mentioned before, this problem is solvable by using Knapsack, but it is kind of a bit different. The difference is, the worth of every “price” is equal to one. If from the `breakPoint` could find the `cutPrice`, then the counter will increased until the loop is break. <br>
+
 The solution link is: http://codeforces.com/contest/998/submission/45190198 <br>
 
 ### Comparison
