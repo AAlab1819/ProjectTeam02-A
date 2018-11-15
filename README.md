@@ -147,7 +147,8 @@ for(int i = 0; i <= cutPrice.size(); i++)
         }
     }
 ```
-And here is the different from Greedy Approach. As we mentioned before, this problem is solvable by using Knapsack, but it is kind of a bit different. The difference is, the worth of every “price” is equal to one. If from the `breakPoint` could find the `cutPrice`, then the counter will increased until the loop is break. <br>
+And here is the different from Greedy Approach. As we mentioned before, this problem is solvable by using Knapsack, but it is kind of a bit different. In `dp[i][w]` i means the number of item and w is the weight of the item. The difference is, the worth of every “price” is equal to one. If from the `breakPoint` could find the `cutPrice`, then the counter will increased until the loop is break.  
+We used tabulation technique in order to solve this problem. This means that every space in `dp` array is filled completely.
 
 The solution link is: http://codeforces.com/contest/998/submission/45190198 <br>
 
