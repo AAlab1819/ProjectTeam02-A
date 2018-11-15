@@ -154,4 +154,4 @@ The solution link is: http://codeforces.com/contest/998/submission/45190198 <br>
 
 ### Comparison
 The easier one to understand is greedy, because it is very straightforward (keep taking the cheapest cuts until we cannot take anything else). The knapsack approach seems faster (15 vs 31 ms), but if the initial amount of bitcoins we have is a very big number, we might run into some memory or time limit problems. In conclusion, if a problem is solvable by greedy, why not?
-<img src="https://imgur.com/a/3FhmbAO">
+![alt text](https://imgur.com/a/3FhmbAO)
