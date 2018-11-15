@@ -69,14 +69,7 @@ So, what we can do is to cut the sequence using the second choice.
 Then, the maximum cut we can get will be 1 so the output for this case is 1.  
 The problem link is: https://codeforces.com/problemset/problem/998/B 
 
-### Greedy Approach
-The greedy solution is first to input all the sequence given while checking if it is an odd number or an even number using a counter. Here, we can found out if the counter is 0 then at that point it has equal odd and even numbers. After we got at which point it is equal, we store that point to an array (here it is called breakPoint). <br>
-Then, we check for each point what is the cutting price and store it to an array (here it is called `cutPrice`). <br>
-Then we sort the `cutPrice` vector in increasing order. <br>
-If the break point is at the end of the sequence then it is not stored to the array. <br>
-We loop the `cutPrice` array and substract our current bitcoins with the cutting price while it is positive. Where, each cut will add an answer for the end. If, when we subtract our current bitcoins with the cutting price but we get a negative number, then we stop it there. Overall complexity is O(*n log n*), because using STL sort has a complexity of *n log n*, and the traversal only takes O(*n*) time. <br>
-
-Snippet of code <br>
+### Pre Processing
 ```c++
 for(int i=0; i<numSequence; i++) {
         cin>>arraySeq[i];
@@ -108,6 +101,15 @@ for(int i=0; i<breakPoint.size(); i++) {
 ```
 Meanwhile in this part, we will cheeck the `breakPoint`, if it is at the end of the sequence, check the previous number of the array. If the breakPoint is not at the end, that find the cutting price at that point directly. <br>
 
+### Greedy Approach
+The greedy solution is first to input all the sequence given while checking if it is an odd number or an even number using a counter. Here, we can found out if the counter is 0 then at that point it has equal odd and even numbers. After we got at which point it is equal, we store that point to an array (here it is called breakPoint). <br>
+Then, we check for each point what is the cutting price and store it to an array (here it is called `cutPrice`). <br>
+Then we sort the `cutPrice` vector in increasing order. <br>
+If the break point is at the end of the sequence then it is not stored to the array. <br>
+We loop the `cutPrice` array and substract our current bitcoins with the cutting price while it is positive. Where, each cut will add an answer for the end. If, when we subtract our current bitcoins with the cutting price but we get a negative number, then we stop it there. Overall complexity is O(*n log n*), because using STL sort has a complexity of *n log n*, and the traversal only takes O(*n*) time. <br>
+
+Snippet of code <br>
+
 ```c++
 sort(cutPrice.begin(), cutPrice.end());
     for(int i=0; i<cutPrice.size(); i++) {
@@ -122,7 +124,7 @@ sort(cutPrice.begin(), cutPrice.end());
             break;
         }
 ```
-Lastly, find how many times the `cutPrice` we can do, by using `Sort`, sort the price from the cheapest one. Then do loop to find the bitcoins left after cutting. If there is some bitcoins left, the counter will be added, then reduce the bitcoins by reduce the bitcoins.
+The problem is to find how many times the `cutPrice` we can do, by using `Sort`, sort the price from the cheapest one. Then do loop to find the bitcoins left after cutting. If there is some bitcoins left, the counter will be added, then reduce the bitcoins by reduce the bitcoins.
 
 The solution link is: https://codeforces.com/contest/998/submission/44893627 <br>
 
@@ -130,38 +132,6 @@ The solution link is: https://codeforces.com/contest/998/submission/44893627 <br
 Perform the same operation as the greedy one (find all the places we can cut, store it into an array that has the prices of each cut). This problem is solvable by using the knapsack method, but assign the worth as 1 for all of them (after all, a cut of price 5 and of price 1 is worth the same). Build the DP table from in bottom up fashion, and then just output `dp[how many cuts can we make][initial bitcoins we had]` as the answer. Overall complexity is O(*nB*), where B is the initial amount of bitcoins we had. <br>
 
 Snippet of code
-```c++
-for(int i=0; i<numSequence; i++) {
-        cin>>arraySeq[i];
-        //IF IT IS EVEN NUMBER
-        if(arraySeq[i]%2==0) {
-            evenNum++;
-        }
-        //IF IT IS ODD NUMBER
-        else {
-            evenNum--;
-        }
-        //BREAK POINT BECAUSE THE SUM OF EVEN AND ODD IS EQUAL HERE
-        if(evenNum==0) {
-            breakPoint.push_back(i);
-        }
-    }
-```
-The solving problem is quiet similar to Greedy Approach. First, we input some number and put it in an array called breakPoint. Then a number from that array will be executed, if the reminder of that number divided two is zero, than the sum of the even number will be increased automatically and if it turned out to be odd number, the sum of the even number will be decreased. Next is, if the sum of the even and odd number is equal, it will reach the break point and loop from the start. <br>
-
-```c++
-for(int i=0; i<breakPoint.size(); i++) {
-        //IF THE BREAKPOINT IS AT THE END OF SEQUENCE
-        if(breakPoint[i]==numSequence-1) {
-            break;
-        }
-        //FIND THE CUTTING PRICE AT THAT POINT
-        else {
-            cutPrice.push_back(abs(arraySeq[breakPoint[i]]-arraySeq[breakPoint[i]+1]));
-        }
-    }
-```
-In this part of the code is stil the same, check the breakpoint, if it is at the end of the sequence, check the previous number of the array. If the breakpoint is not at the end, than find the cutting price at that point directly. <br>
 
 ```c++
 for(int i = 0; i <= cutPrice.size(); i++)
