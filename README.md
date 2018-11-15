@@ -156,7 +156,7 @@ The solution link is: http://codeforces.com/contest/998/submission/45190198 <br>
 ### Comparison
 The easier one to understand is greedy, because it is very straightforward (keep taking the cheapest cuts until we cannot take anything else). The knapsack approach seems faster (15 vs 31 ms), but if the initial amount of bitcoins we have is a very big number, we might run into some memory or time limit problems. In conclusion, if a problem is solvable by greedy, why not?
 Here is the comparison to N and Time using both Greedy and Dynamic Programming approach.
-<pre>
+```c++
      GREEDY            |       DP		
 N     B      TIME      |  N    B      TIME
 2    100  0.00100017   |  2   100      0
@@ -174,5 +174,5 @@ N     B      TIME      |  N    B      TIME
 100   1   0.000999928  | 100  50   0.00200009
 100  100  0.000999928  | 100  100  0.00400019
 100  100  0.000999928  | 100   1   0.000999928
-</pre>
+```
 Insert Image Here
