@@ -175,10 +175,8 @@ N     B      TIME      |  N    B      TIME
 100  100  0.000999928  | 100  100  0.00400019
 100  100  0.000999928  | 100   1   0.000999928
 ```
-At the graphs below blue line indicates the Greedy Solution while the orange one is DP Solution.
-
-The first one is N to Time
-![NtoTime](https://github.com/AAlab1819/ProjectTeam02-A/blob/master/GraphNtoTime.PNG)
-
-The second one is B to Time
-![BtoTime](https://github.com/AAlab1819/ProjectTeam02-A/blob/master/GraphBtoTime.PNG)
+At the graphs below blue line indicates the Greedy Solution while the orange one is DP Solution. Here the vertical line means time, while the horizontal line means N or B depends on which Graph you are looking.<br>
+The first one is N to Time<br>
+![NtoTime](https://github.com/AAlab1819/ProjectTeam02-A/blob/master/GraphNtoTime.PNG)<br>
+The second one is B to Time<br>
+![BtoTime](https://github.com/AAlab1819/ProjectTeam02-A/blob/master/GraphBtoTime.PNG)<br>
