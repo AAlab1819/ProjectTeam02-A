@@ -178,7 +178,7 @@ N     B      TIME      |  N    B      TIME
 At the graphs below blue line indicates the Greedy Solution while the orange one is DP Solution.
 
 The first one is N to Time
-![NtoTime](https://raw.githubusercontent.com/AAlab1819/ProjectTeam02-A/GraphNtoTime.PNG)
+![NtoTime](https://github.com/AAlab1819/ProjectTeam02-A/blob/master/GraphNtoTime.PNG)
 
 The second one is B to Time
-![BtoTime](https://raw.githubusercontent.com/AAlab1819/ProjectTeam02-A/GraphBtoTime.PNG)
+![BtoTime](https://github.com/AAlab1819/ProjectTeam02-A/blob/master/GraphBtoTime.PNG)
