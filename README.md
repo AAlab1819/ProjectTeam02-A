@@ -177,6 +177,6 @@ N     B  |    TIME      |     TIME
 ```
 At the graphs below blue line indicates the Greedy Solution while the orange one is DP Solution. Here the vertical line means time, while the horizontal line means N or B depends on which Graph you are looking.<br>
 The first one is N to Time<br>
-![NtoTime](https://github.com/AAlab1819/ProjectTeam02-A/blob/master/GraphNtoTime.PNG)<br>
+![NtoTime](https://github.com/AAlab1819/ProjectTeam02-A/blob/master/NtoTimeGraph.PNG)<br>
 The second one is B to Time<br>
-![BtoTime](https://github.com/AAlab1819/ProjectTeam02-A/blob/master/GraphBtoTime.PNG)<br>
+![BtoTime](https://github.com/AAlab1819/ProjectTeam02-A/blob/master/BtoTimeGraph.PNG)<br>
