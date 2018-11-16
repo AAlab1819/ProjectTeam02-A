@@ -13,7 +13,7 @@ This repository will solve Codeforces' problem [998 B](https://codeforces.com/pr
 ## Installation/running instruction
 - Compile the source code from this repository and execute the program.
 - If you want to know how to compile and execute the source code from scratch, refer to [this](https://www.youtube.com/watch?v=xuQL_BZydS0) video.
-- This also uses TDM-GCC MinGW Compiler to count the run time of the program.
+- This also uses TDM-GCC MinGW Compiler to count the run time of the program using omp_get_wtime() function.
 
 ## Sample I/O
 **Sample #1:**  
