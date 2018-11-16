@@ -154,8 +154,7 @@ We used tabulation technique in order to solve this problem. This means that eve
 The solution link is: http://codeforces.com/contest/998/submission/45190198 <br>
 
 ### Comparison
-The easier one to understand is greedy, because it is very straightforward (keep taking the cheapest cuts until we cannot take anything else). The knapsack approach seems faster (15 vs 31 ms), but if the initial amount of bitcoins we have is a very big number, we might run into some memory or time limit problems. In conclusion, if a problem is solvable by greedy, why not?
-Here is the comparison of N and Time, together with B and Time using both Greedy and Dynamic Programming approach.
+Here is the comparison of N and Time, together with B and Time using both Greedy and Dynamic Programming approach. At the graphs below blue line indicates the Greedy Solution while the orange one is DP Solution. Here the vertical line means time, while the horizontal line means N or B depends on which Graph you are looking.<br>
 ```c++
              GREEDY            DP
 N     B  |    TIME      |     TIME
@@ -175,8 +174,8 @@ N     B  |    TIME      |     TIME
 100  100 | 0.000999928  |  0.00400019
 100  100 | 0.000999928  |  0.000999928
 ```
-At the graphs below blue line indicates the Greedy Solution while the orange one is DP Solution. Here the vertical line means time, while the horizontal line means N or B depends on which Graph you are looking.<br>
-The first one is N to Time<br>
+The first one is N to Time:<br>
 ![NtoTime](https://github.com/AAlab1819/ProjectTeam02-A/blob/master/NtoTimeGraph.PNG)<br>
-The second one is B to Time<br>
+The second one is B to Time:<br>
 ![BtoTime](https://github.com/AAlab1819/ProjectTeam02-A/blob/master/BtoTimeGraph.PNG)<br>
+Here we can see the easier one to understand is Greedy Solution, because it is very straightforward (keep taking the cheapest cuts until we cannot take anything else). The Knapsack approach seems faster (15 vs 31 ms), but if the initial amount of Bitcoins we have is a very big number, we might run into some memory or time limit problems. In conclusion, if a problem is solvable by greedy, why not? <br>
