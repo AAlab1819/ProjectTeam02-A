@@ -51,5 +51,5 @@ int main() {
     }
     cout<<dp[cutPrice.size()][bitcoins]<<endl;
     cout<<omp_get_wtime()-startTime<<endl;
-    return main();
+    return 0;
 }
