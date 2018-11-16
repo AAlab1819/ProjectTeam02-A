@@ -157,23 +157,23 @@ The solution link is: http://codeforces.com/contest/998/submission/45190198 <br>
 The easier one to understand is greedy, because it is very straightforward (keep taking the cheapest cuts until we cannot take anything else). The knapsack approach seems faster (15 vs 31 ms), but if the initial amount of bitcoins we have is a very big number, we might run into some memory or time limit problems. In conclusion, if a problem is solvable by greedy, why not?
 Here is the comparison of N and Time, together with B and Time using both Greedy and Dynamic Programming approach.
 ```c++
-     GREEDY            |       DP		
-N     B      TIME      |  N    B      TIME
-2    100  0.00100017   |  2   100      0
-4    10   0.000999928  |  4   10       0
-6    100      0        |  6    4   0.000999928
-6     4   0.000999928  |  6   100  0.000999928
-10   50       0        | 10    1   0.00100017
-10    1   0.000999928  | 10   100  0.00100017
-10   100  0.000999928  | 10   50   0.00200009
-10   10   0.000999928  | 10   10   0.00300002
-100  10       0        | 100  100      0
-100   1   0.00100017   | 100   1       0
-100  100  0.00100017   | 100  100  0.00199986
-100  50   0.00300002   | 100  10   0.00200009
-100   1   0.000999928  | 100  50   0.00200009
-100  100  0.000999928  | 100  100  0.00400019
-100  100  0.000999928  | 100   1   0.000999928
+             GREEDY            DP
+N     B  |    TIME      |     TIME
+2    100 | 0.00100017   |      0
+4    10  | 0.000999928  |      0
+6     4  | 0.000999928  |  0.000999928
+6   100  |     0        |  0.000999928
+10    1  | 0.000999928  |  0.00100017
+10   10  | 0.000999928  |  0.00300002
+10   50  |     0        |  0.00100017
+10   100 | 0.000999928  |  0.00200009
+100   1  | 0.00100017   |      0
+100   1  | 0.000999928  |  0.00200009
+100  10  |     0        |      0
+100  50  | 0.00300002   |  0.00200009
+100  100 | 0.00100017   |  0.00199986
+100  100 | 0.000999928  |  0.00400019
+100  100 | 0.000999928  |  0.000999928
 ```
 At the graphs below blue line indicates the Greedy Solution while the orange one is DP Solution. Here the vertical line means time, while the horizontal line means N or B depends on which Graph you are looking.<br>
 The first one is N to Time<br>
